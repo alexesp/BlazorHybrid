@@ -61,13 +61,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="9.0.4" />
     <PackageReference Include="Microsoft.Maui.Controls" Version="9.0.60" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="9.0.60" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.4" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorHybrid.Mobile.Shared\BlazorHybrid.Mobile.Shared.csproj" />
+    <ProjectReference Include="..\..\BlazorHybrid.Shared.Components\BlazorHybrid.Shared.Components.csproj" />
+    <ProjectReference Include="..\..\BlazorHybrid.Shared\BlazorHybrid.Shared.csproj" />
   </ItemGroup>
 
 </Project>
