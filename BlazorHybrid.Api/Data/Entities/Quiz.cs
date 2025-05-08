@@ -1,10 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BlazorHybrid.Api.Data.Entities
 {
     public class Quiz
     {
+        [Key]
         public Guid Id { get; set; }
+        [MaxLength(100)]
         public string Name { get; set; }
         public int CategoryId { get; set; }
         public int TotalQuestions { get; set; }
@@ -14,21 +17,5 @@ namespace BlazorHybrid.Api.Data.Entities
         public Category Category { get; set; }
 
         public ICollection<Question> Questions { get; set; }
-    }
-
-    public class Question
-    {
-        public int Id { get; set; }
-        public string Text { get; set; }
-
-        public Guid QuizId { get; set; }
-        [ForeignKey(nameof(QuizId))] 
-        public Quiz Quiz { get; set; }
-    }
-
-    public class Option
-    {
-        public int Id { get; set; }
-        public int QuestionId { get; set; }
     }
 }
