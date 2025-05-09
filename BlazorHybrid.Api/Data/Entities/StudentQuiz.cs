@@ -12,14 +12,14 @@ namespace BlazorHybrid.Api.Data.Entities
 
         public DateTime StartedOn { get; set; }
 
-        public DateTime CompetedOn { get; set; }
+        public DateTime CompletedOn { get; set; }
 
         public int Score {  get; set; }
 
         [ForeignKey(nameof(StudentId))]
         public virtual User Student { get; set; }
-
-        public Quiz Quiz { get; set; }
+        [ForeignKey(nameof(QuizId))]
+        public virtual Quiz Quiz { get; set; }
 
     }
 }

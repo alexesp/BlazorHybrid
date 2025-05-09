@@ -17,5 +17,7 @@ namespace BlazorHybrid.Api.Data.Entities
         public string Phone {  get; set; }
         [MaxLength(15)]
         public string Role { get; set; } = nameof(UserRole.User);
+
+        public bool IsApproved { get; set; }
     }
 }
