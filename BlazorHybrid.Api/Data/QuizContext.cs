@@ -7,7 +7,7 @@ namespace BlazorHybrid.Api.Data
 {
     public class QuizContext : DbContext
     {
-        private readonly IPasswordHasher<User> _passwordHasher;
+        private readonly  IPasswordHasher<User> _passwordHasher;
         public QuizContext(DbContextOptions<QuizContext> options, IPasswordHasher<User> passwordHasher) : base(options)
         {
             _passwordHasher = passwordHasher;
@@ -29,16 +29,18 @@ namespace BlazorHybrid.Api.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            var adminUser = new User
+           var adminUser = new User
             {
                 Id = 1,
                 Name = "admin",
                 Email = "admin@gmail.com",
                 Phone = "1234567890",
                 Role = nameof(UserRole.Admin),
-                
+                IsApproved = true,
             };
             adminUser.PasswordHash = _passwordHasher.HashPassword(adminUser, "test!");
+
+            modelBuilder.Entity<User>().HasData(adminUser);
         }
     }
 }

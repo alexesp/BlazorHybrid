@@ -1,6 +1,6 @@
 using BlazorHybrid.Mobile.Shared.Services;
 
-namespace BlazorHybrid.Mobile.Services
+namespace BlazorHybrid.Mobile.Shared
 {
     public class FormFactor : IFormFactor
     {

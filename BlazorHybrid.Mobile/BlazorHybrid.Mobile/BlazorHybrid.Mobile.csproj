@@ -70,6 +70,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\BlazorHybrid.Shared.Components\BlazorHybrid.Shared.Components.csproj" />
     <ProjectReference Include="..\..\BlazorHybrid.Shared\BlazorHybrid.Shared.csproj" />
+    <ProjectReference Include="..\BlazorHybrid.Mobile.Shared\BlazorHybrid.Mobile.Shared.csproj" />
   </ItemGroup>
 
 </Project>
