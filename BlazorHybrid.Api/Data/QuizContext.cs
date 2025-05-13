@@ -2,6 +2,7 @@
 using BlazorHybrid.Shared;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace BlazorHybrid.Api.Data
 {
@@ -23,6 +24,8 @@ namespace BlazorHybrid.Api.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
+            optionsBuilder.ConfigureWarnings(warnings =>
+    warnings.Ignore(RelationalEventId.NonTransactionalMigrationOperationWarning));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -38,7 +41,8 @@ namespace BlazorHybrid.Api.Data
                 Role = nameof(UserRole.Admin),
                 IsApproved = true,
             };
-            adminUser.PasswordHash = _passwordHasher.HashPassword(adminUser, "test!");
+            //adminUser.PasswordHash = _passwordHasher.HashPassword(adminUser, "test!");
+            adminUser.PasswordHash = "$2y$13$xeDfQumlmdm0Sco.4qmH1OGfUUmOcuRmfae0dPJhjX1Bq0yYhqbNi";
 
             modelBuilder.Entity<User>().HasData(adminUser);
         }

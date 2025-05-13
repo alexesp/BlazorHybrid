@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlazorHybrid.Api.Data.Migrations
 {
     [DbContext(typeof(QuizContext))]
-    [Migration("20250513094814_InitialMigration")]
+    [Migration("20250513122741_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -200,7 +200,7 @@ namespace BlazorHybrid.Api.Data.Migrations
                             Email = "admin@gmail.com",
                             IsApproved = true,
                             Name = "admin",
-                            PasswordHash = "AQAAAAIAAYagAAAAEJw71ufK8eZKz8PmkklG55pleA5cyKzDOnu/DroQznDzmM9lSbt6z6GeIl8oCtAK9Q==",
+                            PasswordHash = "$2y$13$xeDfQumlmdm0Sco.4qmH1OGfUUmOcuRmfae0dPJhjX1Bq0yYhqbNi",
                             Phone = "1234567890",
                             Role = "Admin"
                         });

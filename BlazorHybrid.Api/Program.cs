@@ -27,10 +27,10 @@ var app = builder.Build();
 
 //if (context.Database.GetPendingMigrations().Any())
 //{
-//   await context.Database.MigrateAsync();
+//    await context.Database.MigrateAsync();
 //}
 //#if DEBUG
-ApplyDbMigrations(app.Services);
+//ApplyDbMigrations(app.Services);
 //#endif
 
 // Configure the HTTP request pipeline.
@@ -49,13 +49,13 @@ app.UseHttpsRedirection();
 app.Run();
 
 
-static void ApplyDbMigrations(IServiceProvider sp)
-{
-    var scope = sp.CreateScope();
-    var context = scope.ServiceProvider.GetRequiredService<QuizContext>();
+//static void ApplyDbMigrations(IServiceProvider sp)
+//{
+//    var scope = sp.CreateScope();
+//    var context = scope.ServiceProvider.GetRequiredService<QuizContext>();
 
-    if (context.Database.GetPendingMigrations().Any())
-    {
-        context.Database.Migrate();
-    }
-}
+//    if (context.Database.GetPendingMigrations().Any())
+//    {
+//        context.Database.Migrate();
+//    }
+//}

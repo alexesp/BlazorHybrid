@@ -137,7 +137,7 @@ namespace BlazorHybrid.Api.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Email", "IsApproved", "Name", "PasswordHash", "Phone", "Role" },
-                values: new object[] { 1, "admin@gmail.com", true, "admin", "AQAAAAIAAYagAAAAEJw71ufK8eZKz8PmkklG55pleA5cyKzDOnu/DroQznDzmM9lSbt6z6GeIl8oCtAK9Q==", "1234567890", "Admin" });
+                values: new object[] { 1, "admin@gmail.com", true, "admin", "$2y$13$xeDfQumlmdm0Sco.4qmH1OGfUUmOcuRmfae0dPJhjX1Bq0yYhqbNi", "1234567890", "Admin" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Options_QuestionId",
